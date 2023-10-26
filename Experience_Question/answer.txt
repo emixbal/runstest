@@ -1,0 +1,47 @@
+1. With your programming experience, how many year(s) do you use each of your programming language experience ?
+PHP > 5 years
+js (jquery) > 5 years
+reactjs 4 years
+go 1 year
+nodejs 1/2 year
+python 1/2 year
+
+2. What was your most challenging programming experience ? And how did you overcome it ?
+    - migrating db with large data. be carefull and always make backup
+    - app saya kebagisan bandwith karena infrastruktur saat develop dulu sudah tidak relevan dengan internet sekarang. Yang saya lakukan mengamati
+    apa yang sebenernya terjadi, lalu membuat solusi dengan merubah sedikit metode pengambilan data 
+
+3. conditional algorithm
+    - if with else
+    When we need evaluate conditions and take action if conditions are met.
+    If the condition is not met, do something else.
+    for example when creating download feature. user able to download pdf or excel.
+    if (doc == pdf) {
+        // do download pdf
+    } elseif (doc == xls){
+        // do download pdf
+    } else {
+        // doc no available
+    }
+
+     - if without else
+    When we need evaluate conditions and take action if conditions are met.
+    If the condition is not met, no action is taken.
+    for example when querying data from the db.
+    if(!$branch){
+        return response()->json([
+            "status" => "nok",
+            "message" => "not found",
+            "data" => null
+        ], 400);
+    }
+    - case
+    whe we have a lot of choices
+    i ofthen use switch case in redux reducers
+4. How  I do handle large dataset with ACID database ?
+    - always make back up
+    - make db isolate if it necessary, never publish db ip in ip public
+    - if posible make replication to make cqrs method.
+5.
+    - clear assignment (JIRA/Trello etc)
+    - clear and good comuncation 

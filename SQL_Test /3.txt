@@ -1,0 +1,14 @@
+SELECT
+    e.employee_id AS ID,
+    e.employee_name AS Name,
+    e.employer_id AS Boss,
+    g.grade_name AS Grade,
+    d.department_name AS Department,
+    p.position_name AS Position,
+    FORMAT(g.salary, 0) AS Salary
+FROM employee e
+JOIN position p ON e.position_id = p.position_id
+JOIN grade g ON e.grade_id = g.grade_id
+JOIN department d ON d.department_id=e.department_id
+ORDER BY e.grade_id DESC, e.employee_name ASC
+LIMIT 1 OFFSET 5;

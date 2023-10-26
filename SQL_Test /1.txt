@@ -1,0 +1,19 @@
+SELECT
+    e.employee_id AS ID,
+    e.employee_name AS NAME,
+    IF(
+        boss.employee_name IS NOT NULL,
+        boss.employee_name,
+        'No Boss'
+    ) AS Boss,
+    g.grade_name AS Grade,
+    d.department_name AS Department,
+    p.position_name AS POSITION,
+    g.salary AS Salary,
+    DATE_FORMAT(e.join_date, '%d-%b-%y') AS "Join Date"
+FROM employee e
+LEFT JOIN grade g ON e.grade_id = g.grade_id
+LEFT JOIN department d ON e.department_id = d.department_id
+LEFT JOIN position p ON e.position_id = p.position_id
+LEFT JOIN employee boss ON e.employer_id = boss.employee_id
+ORDER BY e.join_date ASC;

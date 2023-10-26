@@ -1,0 +1,29 @@
+
+SELECT
+    e.employee_name AS Name,
+    p.position_name AS Position,
+    DATE_FORMAT(e.join_date, '%d-%b-%y') AS Join_Date,
+    CONCAT(
+        FLOOR(YEAR('2023-05-05') - YEAR(e.join_date)),
+        IF(
+            FLOOR(YEAR('2023-05-05') - YEAR(e.join_date)) = 1,
+            ' year',
+            ' years'
+        ),
+        IF(
+            DATEDIFF('2023-05-05', e.join_date) % 365 > 0,
+            CONCAT(
+                ' and ',
+                FLOOR((DATEDIFF('2023-05-05', e.join_date) % 365) / 30.44),
+                IF(
+                    FLOOR((DATEDIFF('2023-05-05', e.join_date) % 365) / 30.44) = 1,
+                    ' month',
+                    ' months'
+                )
+            ),
+            ''
+        )
+    ) AS Employment_Period
+FROM employee e
+JOIN position p ON e.position_id = p.position_id
+ORDER BY e.join_date;
