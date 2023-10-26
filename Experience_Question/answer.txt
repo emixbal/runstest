@@ -24,7 +24,7 @@ python 1/2 year
         // doc no available
     }
 
-     - if without else
+    - if without else
     When we need evaluate conditions and take action if conditions are met.
     If the condition is not met, no action is taken.
     for example when querying data from the db.
@@ -36,7 +36,7 @@ python 1/2 year
         ], 400);
     }
     - case
-    whe we have a lot of choices
+    when we have many choices
     i ofthen use switch case in redux reducers
 4. How  I do handle large dataset with ACID database ?
     - always make back up
